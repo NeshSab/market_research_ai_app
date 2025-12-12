@@ -8,6 +8,11 @@ import streamlit as st
 import traceback
 import logging
 
+if not os.getenv("USER_AGENT"):
+    os.environ["USER_AGENT"] = (
+        "Mozilla/5.0 (compatible; MarketIntelligenceApp/1.0; Streamlit)"
+    )
+
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
@@ -42,6 +47,9 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+logger.info("Starting Market Intelligence Companion app")
+
 try:
     logger.info("Initializing app state")
     init_state()
