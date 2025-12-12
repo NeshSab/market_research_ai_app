@@ -1,3 +1,0 @@
-2025-12-12 18:09:15,168 INFO core.services.logging_setup Logging initialized - writing to: /Users/agneskasablovskaja/Desktop/Python/turing_college/temp-streamlit-app/market_research_ai_app/app/logs/app.log
-2025-12-12 18:09:15,168 INFO core.services.logging_setup Log level: INFO
-2025-12-12 18:09:16,618 INFO root Initialized new UI session state.
