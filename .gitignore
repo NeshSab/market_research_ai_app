@@ -25,3 +25,7 @@ logs/
 *.log
 
 temp/
+
+uv.lock
+.python-version
+pyproject.toml
