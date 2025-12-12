@@ -126,7 +126,7 @@ def render_sidebar(index_path: str) -> None:
 
                 if not ui_state.api_key or not ui_state.fred_key:
                     st.error("OpenAI and FRED API keys are required.")
-                    st.stop()
+                  
                 os.environ["OPENAI_API_KEY"] = ui_state.api_key
                 ui_state.api_key_set = True
 
