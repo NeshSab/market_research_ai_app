@@ -1,31 +1,13 @@
 """
-Minimal test version of the Market Intelligence Companion app.
-This version helps diagnose deployment issues.
+Ultra-minimal Streamlit app for cloud deployment testing.
 """
 
 import streamlit as st
 import sys
 import os
 
-# Set USER_AGENT for cloud deployment
-if not os.getenv("USER_AGENT"):
-    os.environ["USER_AGENT"] = (
-        "Mozilla/5.0 (compatible; MarketIntelligenceApp/1.0; Streamlit)"
-    )
-
-# Add current directory to path
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-st.set_page_config(
-    page_title="Market Intelligence Companion",
-    page_icon="📊",
-    layout="wide",
-)
-
-st.title("🚀 Market Intelligence Companion")
-st.success("✅ App is running successfully!")
-
-st.info("This is a minimal version to test Streamlit Cloud deployment.")
+st.title("Hello Streamlit Cloud!")
+st.write("If you can see this, the deployment is working.")
 
 # Basic functionality test
 st.subheader("Environment Test")
