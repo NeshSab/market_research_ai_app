@@ -2,8 +2,6 @@
 
 An AI-powered financial analysis companion that combines real-time market data, comprehensive sector analysis, and curated financial knowledge to provide professional-grade market insights. Built with Streamlit and powered by OpenAI's GPT models with RAG (Retrieval-Augmented Generation) capabilities.
 
-<!-- Add your Streamlit app link here when deployed -->
-<!-- - Live Demo: https://your-app-link.streamlit.app/ -->
 <br>
 
 ## Table of Contents
@@ -47,11 +45,11 @@ This application helps users analyze financial markets through AI-powered insigh
 ## How to Run
 1. Clone the repository:
     ```bash
-    git clone https://github.com/TuringCollegeSubmissions/asablo-AE.2.5
+    git clone https://github.com/NeshSab/market_research_ai_app
     ```
 2. Navigate to the project directory:
     ```bash
-    cd asablo-AE.2.5
+    cd market_research_ai_app
     ```
 3. (Optional) Create and activate a Python virtual environment:
     ```bash
