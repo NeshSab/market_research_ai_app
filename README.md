@@ -44,32 +44,13 @@ This application helps users analyze financial markets through AI-powered insigh
 
 ## How to Run
 1. Clone the repository:
-    ```bash
-    git clone https://github.com/NeshSab/market_research_ai_app
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd market_research_ai_app
-    ```
-3. (Optional) Create and activate a Python virtual environment:
-    ```bash
-    python3 -m venv .venv
-    source .venv/bin/activate  
-    - On Windows: .venv\Scripts\activate
-    ```
-4. Install dependencies using pip:
-    ```bash
-    pip install -e .
-    ```
-   Or using uv (faster):
-    ```bash
-    uv sync
-    ```
+    - git clone https://github.com/NeshSab/market_research_ai_app
+2. Navigate to the project directory
+3. (Optional) Create and activate a Python virtual environment
+4. Install dependencies using requirements.txt
 5. Navigate to app folder and run the application:
-    ```bash
-    cd app
-    streamlit run app.py
-    ```
+    - streamlit run app.py
+
 6. Configure API keys in the sidebar:
    - **Required**: OpenAI API Key
    - **Required**: FRED API Key (for economic data)
