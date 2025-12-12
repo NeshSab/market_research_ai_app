@@ -1,6 +1,0 @@
-2025-12-10 17:52:57,139 INFO core.services.logging_setup LangSmith tracing enabled.
-2025-12-10 17:53:01,276 INFO httpx HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-12-10 17:53:36,908 INFO httpx HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
-2025-12-10 17:54:10,393 INFO httpx HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-12-10 17:56:39,992 INFO httpx HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2025-12-10 17:57:11,379 INFO httpx HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
