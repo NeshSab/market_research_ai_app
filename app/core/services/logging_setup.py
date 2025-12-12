@@ -14,36 +14,77 @@ Features:
 
 import logging
 import os
+from pathlib import Path
 from langsmith import Client
 
+_logging_initialized = False
 
-def setup_logging(langsmith_enabled: str, trace_level: str) -> None:
+
+def setup_logging(trace_level: str = "info") -> None:
     """
-    Configure application logging and optional LangSmith tracing.
+    Configure basic application logging to file.
 
-    Sets up file-based logging with configurable levels and initializes
-    LangSmith client if enabled and API key is available.
+    Sets up file-based logging with configurable levels.
+
+    Parameters
+    ----------
+    trace_level : str
+        Logging detail level ("verbose" for DEBUG, others for INFO)
+    """
+    global _logging_initialized
+
+    if _logging_initialized:
+        return
+
+    log_dir = Path(__file__).parent.parent.parent / "logs"
+    log_dir.mkdir(exist_ok=True)
+    log_file = log_dir / "app.log"
+
+    root_logger = logging.getLogger()
+
+    for handler in root_logger.handlers[:]:
+        root_logger.removeHandler(handler)
+
+    file_handler = logging.FileHandler(str(log_file), mode="a", encoding="utf-8")
+    file_handler.setLevel(logging.DEBUG if trace_level == "verbose" else logging.INFO)
+
+    formatter = logging.Formatter("%(asctime)s %(levelname)s %(name)s %(message)s")
+    file_handler.setFormatter(formatter)
+
+    root_logger.addHandler(file_handler)
+    root_logger.setLevel(logging.DEBUG if trace_level == "verbose" else logging.INFO)
+
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.WARNING)
+    console_handler.setFormatter(formatter)
+    root_logger.addHandler(console_handler)
+
+    _logging_initialized = True
+
+    logger = logging.getLogger(__name__)
+    logger.info(f"Logging initialized - writing to: {log_file}")
+    logger.info(f"Log level: {'DEBUG' if trace_level == 'verbose' else 'INFO'}")
+
+
+def setup_langsmith(langsmith_enabled: str) -> None:
+    """
+    Configure LangSmith tracing.
+
+    Initializes LangSmith client if enabled and API key is available.
+    Can be called multiple times to reconfigure.
 
     Parameters
     ----------
     langsmith_enabled : str
         Whether to enable LangSmith tracing ("true" to enable)
-    trace_level : str
-        Logging detail level ("verbose" for DEBUG, others for INFO)
     """
-    os.makedirs("logs", exist_ok=True)
-    logging.basicConfig(
-        filename="logs/app.log",
-        level=logging.DEBUG if trace_level == "verbose" else logging.INFO,
-        format="%(asctime)s %(levelname)s %(name)s %(message)s",
-    )
+    logger = logging.getLogger(__name__)
+
     if langsmith_enabled == "true":
         langsmith_api_key = os.getenv("LANGSMITH_API_KEY")
         if langsmith_api_key:
             try:
                 client = Client()
-                logger = logging.getLogger(__name__)
-
                 logger.info("LangSmith client initialized successfully")
                 project_name = os.getenv("LANGSMITH_PROJECT")
                 if project_name:
@@ -57,8 +98,6 @@ def setup_logging(langsmith_enabled: str, trace_level: str) -> None:
                     logger.debug("LangSmith client is ready for tracing")
 
             except Exception as e:
-                logger = logging.getLogger(__name__)
                 logger.error(f"Failed to initialize LangSmith client: {e}")
         else:
-            logger = logging.getLogger(__name__)
             logger.warning("LangSmith enabled but LANGSMITH_API_KEY not found")

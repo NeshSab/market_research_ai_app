@@ -45,7 +45,6 @@ class Session(BaseModel):
     last_tools_used: list = Field(default_factory=list)
 
     langsmith_enabled: str = "false"
-    trace_level: str = "basic"
 
     ops_per_min: int = 30
 

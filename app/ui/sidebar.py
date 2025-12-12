@@ -22,6 +22,7 @@ Key features:
 import os
 import traceback
 import streamlit as st
+from pathlib import Path
 
 from datetime import datetime
 from ui.utils import format_duration, get_knowledge_base_files
@@ -38,7 +39,7 @@ from core.services.pricing import PRICE_TABLE
 from core.tools.web_load import web_load
 from dotenv import load_dotenv
 
-from core.services.logging_setup import setup_logging
+from core.services.logging_setup import setup_logging, setup_langsmith
 from core.services.rag_store import (
     build_faiss_from_documents,
     add_uploaded_files_to_index,
@@ -128,6 +129,7 @@ def render_sidebar(index_path: str) -> None:
                     st.stop()
                 os.environ["OPENAI_API_KEY"] = ui_state.api_key
                 ui_state.api_key_set = True
+
                 init_controller()
 
                 if ui_state.fred_key:
@@ -143,9 +145,8 @@ def render_sidebar(index_path: str) -> None:
                     os.environ["LANGSMITH_PROJECT"] = ui_state.langsmith_project
                     os.environ["LANGSMITH_TRACING"] = "true"
 
-                setup_logging(ui_state.langsmith_enabled, ui_state.trace_level)
+                setup_langsmith(ui_state.langsmith_enabled)
 
-                st.success("Initialized.")
             except Exception as e:
                 st.error(f"Initialization failed: {e}")
                 traceback.print_exc()
@@ -221,7 +222,7 @@ def render_sidebar(index_path: str) -> None:
                             success = add_uploaded_files_to_index(
                                 uploaded, abs_index_path
                             )
-                            
+
                             if success:
                                 st.success(
                                     f"✅ Successfully added {len(uploaded)} "
@@ -260,7 +261,7 @@ def render_sidebar(index_path: str) -> None:
                                 success = add_url_content_to_index(
                                     url_input.strip(), content, abs_index_path
                                 )
-                                
+
                                 if success:
                                     st.success(
                                         "✅ Successfully added URL content "
@@ -361,18 +362,18 @@ def render_sidebar(index_path: str) -> None:
                         st.error(f"Export failed: {str(e)}")
 
             st.divider()
-            
+
             st.subheader("📋 Export Logs")
             if st.button("Export App Logs", use_container_width=True):
                 try:
-                    log_file_path = "logs/app.log"
-                    if os.path.exists(log_file_path):
-                        with open(log_file_path, 'r', encoding='utf-8') as f:
+                    log_file_path = Path(__file__).parent.parent / "logs" / "app.log"
+                    if log_file_path.exists():
+                        with open(str(log_file_path), "r", encoding="utf-8") as f:
                             log_content = f.read()
-                        
+
                         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
                         filename = f"app_logs_{timestamp}.log"
-                        
+
                         st.download_button(
                             label="📥 Download Logs",
                             data=log_content,

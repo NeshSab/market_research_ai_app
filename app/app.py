@@ -5,29 +5,23 @@ Main application file for the Market Intelligence Companion Streamlit app.
 import sys
 import os
 import streamlit as st
-import traceback
-import logging
 
 if not os.getenv("USER_AGENT"):
     os.environ["USER_AGENT"] = (
         "Mozilla/5.0 (compatible; MarketIntelligenceApp/1.0; Streamlit)"
     )
 
-logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-)
-logger = logging.getLogger(__name__)
-
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+from core.services.logging_setup import setup_logging  # noqa: E402
+
+setup_logging("basic")
 
 try:
     from ui.state import init_state
     from ui.sidebar import render_sidebar
     from ui.tabs import about, market_sector_overview, ai_desk
-
-    logger.info("Successfully imported all modules")
 except ImportError as e:
-    logger.error(f"Import error: {e}")
     st.error(f"Import error: {e}")
     st.stop()
 
@@ -50,17 +44,11 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-logger.info("Starting Market Intelligence Companion app")
-
 try:
-    logger.info("Initializing app state")
     init_state()
-
-    logger.info("Rendering sidebar")
     with st.sidebar:
         render_sidebar(INDEX_PATH)
 
-    logger.info("Rendering main content")
     st.title("Market Intelligence Companion")
     st.html(
         """
@@ -81,9 +69,6 @@ try:
             else:
                 TAB_RENDERERS[name]()
 
-    logger.info("App loaded successfully")
 
 except Exception as e:
-    logger.error(f"Application error: {str(e)}", exc_info=True)
     st.error(f"An error occurred: {e}")
-    st.code(traceback.format_exc())
