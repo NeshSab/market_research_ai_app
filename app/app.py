@@ -38,7 +38,9 @@ TAB_RENDERERS = {
     "AI Desk": ai_desk.render,
 }
 TABS = ["About", "Market & Sector Overview", "AI Desk"]
-INDEX_PATH = "var/faiss_index"
+
+APP_DIR = os.path.dirname(os.path.abspath(__file__))
+INDEX_PATH = os.path.join(APP_DIR, "var", "faiss_index")
 
 
 st.set_page_config(

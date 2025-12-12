@@ -107,7 +107,14 @@ def start_chating(ctrl, ui_state) -> None:
 def get_knowledge_base_files(base_patterns: list[str]) -> list[str]:
     """Get relevant markdown files for RAG indexing."""
     files = []
+    app_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    
     for pattern in base_patterns:
-        files.extend(glob.glob(pattern))
+        if not os.path.isabs(pattern):
+            abs_pattern = os.path.join(app_dir, pattern)
+        else:
+            abs_pattern = pattern
+            
+        files.extend(glob.glob(abs_pattern))
 
     return [f for f in files if os.path.exists(f)]

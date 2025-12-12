@@ -34,6 +34,10 @@ def load_regime_config(path: str = "knowledge_base/configs/regime_rules.json") -
     dict
         Configuration dictionary with thresholds and labels
     """
+    if not Path(path).is_absolute():
+        app_dir = Path(__file__).parent.parent.parent
+        path = app_dir / path
+    
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
 

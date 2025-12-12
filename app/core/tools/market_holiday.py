@@ -52,7 +52,8 @@ def market_holiday_checker(query: str = None) -> str:
     • Finding remaining holidays in the current year
     • Planning around market closures and trading schedules
     """
-    holidays_path = Path("knowledge_base/semistatic/us_market_holidays.json")
+    app_dir = Path(__file__).parent.parent.parent
+    holidays_path = app_dir / "knowledge_base/semistatic/us_market_holidays.json"
 
     try:
         holiday_data = json.loads(holidays_path.read_text())

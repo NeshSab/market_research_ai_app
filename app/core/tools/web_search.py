@@ -36,6 +36,10 @@ def load_approved_domains(
 ) -> list[str]:
     """Load approved domains from JSON config file."""
     try:
+        if not Path(path).is_absolute():
+            app_dir = Path(__file__).parent.parent.parent
+            path = app_dir / path
+
         data = json.loads(Path(path).read_text(encoding="utf-8"))
         return data.get("domains", [])
     except (FileNotFoundError, json.JSONDecodeError) as e:
