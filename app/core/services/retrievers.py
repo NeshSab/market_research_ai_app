@@ -19,6 +19,7 @@ query expansion for improved search results in knowledge base applications.
 
 from __future__ import annotations
 import hashlib
+import logging
 from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
@@ -27,6 +28,8 @@ from langchain_core.runnables import RunnableLambda
 from langchain_core.vectorstores import VectorStoreRetriever
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from ..prompts.tools.query_variants import system_prompt, user_prompt
+
+logger = logging.getLogger(__name__)
 
 
 def get_embeddings() -> OpenAIEmbeddings:
@@ -54,12 +57,21 @@ def load_vectorstore(index_path: str) -> FAISS:
     -------
     FAISS
         Loaded FAISS vector store instance
+        
+    Raises
+    ------
+    FileNotFoundError
+        If the FAISS index doesn't exist at the specified path
     """
-    return FAISS.load_local(
-        index_path,
-        get_embeddings(),
-        allow_dangerous_deserialization=True,
-    )
+    try:
+        return FAISS.load_local(
+            index_path,
+            get_embeddings(),
+            allow_dangerous_deserialization=True,
+        )
+    except Exception as e:
+        logger.error(f"Failed to load FAISS index from {index_path}: {e}")
+        raise FileNotFoundError(f"FAISS index not found or corrupted at {index_path}")
 
 
 def get_semantic_retriever(index_path: str, k: int = 4) -> VectorStoreRetriever:

@@ -217,14 +217,30 @@ def render_sidebar(index_path: str) -> None:
                 if st.button("Add to Knowledge Base", type="primary"):
                     with st.spinner(f"Adding {len(uploaded)} document(s)..."):
                         try:
-                            add_uploaded_files_to_index(uploaded, index_path)
-                            st.success(f"✅ Added {len(uploaded)} document(s)!")
+                            abs_index_path = os.path.abspath(index_path)
+                            success = add_uploaded_files_to_index(
+                                uploaded, abs_index_path
+                            )
+                            
+                            if success:
+                                st.success(
+                                    f"✅ Successfully added {len(uploaded)} "
+                                    f"document(s) to knowledge base!"
+                                )
+                                st.info(
+                                    "📚 The documents are now searchable in AI Desk."
+                                )
+                            else:
+                                st.warning(
+                                    "⚠️ Some documents may not have been processed."
+                                )
 
                             ui_state.file_uploader_key += 1
                             st.rerun()
 
                         except Exception as e:
                             st.error(f"❌ Failed to add documents: {e}")
+                            st.code(traceback.format_exc())
 
             st.markdown("**Or add content from URL:**")
             url_input = st.text_input(
@@ -240,17 +256,31 @@ def render_sidebar(index_path: str) -> None:
                         try:
                             content = web_load.invoke({"link": url_input.strip()})
                             if content and content != "No content loaded":
-                                add_url_content_to_index(
-                                    url_input.strip(), content, index_path
+                                abs_index_path = os.path.abspath(index_path)
+                                success = add_url_content_to_index(
+                                    url_input.strip(), content, abs_index_path
                                 )
-                                st.success(
-                                    "✅ Added content from URL to knowledge base!"
-                                )
+                                
+                                if success:
+                                    st.success(
+                                        "✅ Successfully added URL content "
+                                        "to knowledge base!"
+                                    )
+                                    st.info(
+                                        "📚 The web content is now searchable "
+                                        "in AI Desk."
+                                    )
+                                else:
+                                    st.warning(
+                                        "⚠️ URL content may not have been "
+                                        "processed correctly."
+                                    )
                             else:
                                 st.error("❌ No content could be loaded from this URL")
 
                         except Exception as e:
                             st.error(f"❌ Failed to add URL content: {e}")
+                            st.code(traceback.format_exc())
 
                         ui_state.web_uploader_key += 1
                         st.rerun()
@@ -329,6 +359,35 @@ def render_sidebar(index_path: str) -> None:
                         st.success(f"✅ {export_format} export ready for download!")
                     except Exception as e:
                         st.error(f"Export failed: {str(e)}")
+
+            st.divider()
+            
+            st.subheader("📋 Export Logs")
+            if st.button("Export App Logs", use_container_width=True):
+                try:
+                    log_file_path = "logs/app.log"
+                    if os.path.exists(log_file_path):
+                        with open(log_file_path, 'r', encoding='utf-8') as f:
+                            log_content = f.read()
+                        
+                        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                        filename = f"app_logs_{timestamp}.log"
+                        
+                        st.download_button(
+                            label="📥 Download Logs",
+                            data=log_content,
+                            file_name=filename,
+                            mime="text/plain",
+                            use_container_width=True,
+                        )
+                        st.success("✅ Log file ready for download!")
+                    else:
+                        st.warning(
+                            "⚠️ No log file found. Try using the app first "
+                            "to generate logs."
+                        )
+                except Exception as e:
+                    st.error(f"Failed to export logs: {str(e)}")
 
             st.divider()
             if st.button("Reset session", type="primary", use_container_width=True):

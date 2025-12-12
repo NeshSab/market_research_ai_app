@@ -62,8 +62,10 @@ def ticker_analyzer(ticker: str, period: str = "1wk") -> str:
             f"Explain {sector} sector performance drivers and "
             f"key factors affecting {sector} stocks"
         )
-        index_path = "var/faiss_index"
-        docs = retrieve_semantic(index_path, query, k=2)
+        from pathlib import Path
+        app_dir = Path(__file__).parent.parent.parent
+        index_path = app_dir / "var" / "faiss_index"
+        docs = retrieve_semantic(str(index_path), query, k=2)
 
         comparison_df = ticker_data.get("comparison_data")
         date_info = ""

@@ -17,6 +17,7 @@ Key features:
 - Primary source prioritization for research
 """
 
+from pathlib import Path
 import logging
 from pydantic import BaseModel, Field
 from langchain_core.tools import tool
@@ -41,7 +42,11 @@ def search_knowledge_base(query: str) -> str:
     This should be your go-to source before external searches.
     """
     try:
-        docs = retrieve_semantic("var/faiss_index", query, k=3)
+
+        app_dir = Path(__file__).parent.parent.parent
+        index_path = app_dir / "var" / "faiss_index"
+
+        docs = retrieve_semantic(str(index_path), query, k=3)
 
         if not docs:
             return "No relevant information found in internal knowledge base."
