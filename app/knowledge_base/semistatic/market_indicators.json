@@ -1,0 +1,165 @@
+{
+  "market_indicators": {
+    "^GSPC": {
+      "name": "S&P 500",
+      "category": "equity_index",
+      "usage": ["market_regime", "ticker_comparison", "charts"],
+      "primary_indicator": true,
+      "description": "Primary US equity market benchmark"
+    },
+    "^VIX": {
+      "name": "VIX (Volatility)",
+      "category": "volatility",
+      "usage": ["market_regime", "charts"],
+      "primary_indicator": true,
+      "description": "Market fear gauge and volatility measure"
+    },
+    "DX-Y.NYB": {
+      "name": "US Dollar Index (DXY)",
+      "category": "currency",
+      "usage": ["market_regime", "charts"],
+      "primary_indicator": true,
+      "description": "US Dollar strength vs basket of currencies"
+    },
+    "GC=F": {
+      "name": "Gold Futures",
+      "category": "commodity",
+      "usage": ["market_regime", "charts"],
+      "primary_indicator": true,
+      "description": "Safe haven asset and inflation hedge"
+    },
+    "^TNX": {
+      "name": "10-Year Treasury Yield",
+      "category": "fixed_income",
+      "usage": ["market_regime", "yield_analysis"],
+      "primary_indicator": true,
+      "description": "Benchmark long-term interest rate"
+    },
+    "SI=F": {
+      "name": "Silver Futures",
+      "category": "commodity",
+      "usage": ["extended_analysis"],
+      "primary_indicator": false,
+      "description": "Industrial and precious metal"
+    },
+    "CL=F": {
+      "name": "Crude Oil",
+      "category": "commodity",
+      "usage": ["extended_analysis"],
+      "primary_indicator": false,
+      "description": "Energy commodity benchmark"
+    },
+    "NG=F": {
+      "name": "Natural Gas",
+      "category": "commodity",
+      "usage": ["extended_analysis"],
+      "primary_indicator": false,
+      "description": "Natural gas futures"
+    },
+    "^FVX": {
+      "name": "5-Year Treasury Yield",
+      "category": "fixed_income",
+      "usage": ["yield_curve"],
+      "primary_indicator": false,
+      "description": "Medium-term government bond yield"
+    },
+    "^TYX": {
+      "name": "30-Year Treasury Yield",
+      "category": "fixed_income",
+      "usage": ["yield_curve"],
+      "primary_indicator": false,
+      "description": "Long-term government bond yield"
+    },
+    "^IRX": {
+      "name": "3-Month Treasury Bill",
+      "category": "fixed_income",
+      "usage": ["yield_curve"],
+      "primary_indicator": false,
+      "description": "Short-term government debt instrument"
+    },
+    "BTC-USD": {
+      "name": "Bitcoin",
+      "category": "crypto",
+      "usage": ["alternative_assets"],
+      "primary_indicator": false,
+      "description": "Leading cryptocurrency"
+    },
+    "ETH-USD": {
+      "name": "Ethereum",
+      "category": "crypto",
+      "usage": ["alternative_assets"],
+      "primary_indicator": false,
+      "description": "Second largest cryptocurrency"
+    },
+    "EURUSD=X": {
+      "name": "EUR/USD",
+      "category": "forex",
+      "usage": ["currency_analysis"],
+      "primary_indicator": false,
+      "description": "Euro vs US Dollar exchange rate"
+    },
+    "GBPUSD=X": {
+      "name": "GBP/USD",
+      "category": "forex",
+      "usage": ["currency_analysis"],
+      "primary_indicator": false,
+      "description": "British Pound vs US Dollar exchange rate"
+    },
+    "USDJPY=X": {
+      "name": "USD/JPY",
+      "category": "forex",
+      "usage": ["currency_analysis"],
+      "primary_indicator": false,
+      "description": "US Dollar vs Japanese Yen exchange rate"
+    },
+    "^IXIC": {
+      "name": "NASDAQ",
+      "category": "equity_index",
+      "usage": ["sector_analysis"],
+      "primary_indicator": false,
+      "description": "Technology-heavy stock index"
+    },
+    "^DJI": {
+      "name": "Dow Jones",
+      "category": "equity_index",
+      "usage": ["sector_analysis"],
+      "primary_indicator": false,
+      "description": "30 large-cap US stocks index"
+    },
+    "^RUT": {
+      "name": "Russell 2000",
+      "category": "equity_index",
+      "usage": ["sector_analysis"],
+      "primary_indicator": false,
+      "description": "Small-cap US stocks index"
+    },
+    "HYG": {
+      "name": "High Yield Corporate Bonds",
+      "category": "fixed_income",
+      "usage": ["credit_analysis"],
+      "primary_indicator": false,
+      "description": "High yield corporate bond ETF"
+    },
+    "TLT": {
+      "name": "20+ Year Treasury Bonds",
+      "category": "fixed_income",
+      "usage": ["duration_analysis"],
+      "primary_indicator": false,
+      "description": "Long duration treasury bond ETF"
+    },
+    "IEF": {
+      "name": "7-10 Year Treasury Bonds",
+      "category": "fixed_income",
+      "usage": ["duration_analysis"],
+      "primary_indicator": false,
+      "description": "Intermediate duration treasury ETF"
+    },
+    "SHY": {
+      "name": "1-3 Year Treasury Bonds",
+      "category": "fixed_income",
+      "usage": ["duration_analysis"],
+      "primary_indicator": false,
+      "description": "Short duration treasury bond ETF"
+    }
+  }
+}

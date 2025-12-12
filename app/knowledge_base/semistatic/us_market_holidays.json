@@ -1,0 +1,26 @@
+{
+  "title": "U.S. Stock Market Holidays",
+  "as_of": "2025",
+  "description": "Official U.S. stock market holidays and early close days. Year omitted for generalization.",
+  "holidays": [
+    { "name": "New Year's Day", "date": "Jan 1" },
+    { "name": "Martin Luther King Jr. Day", "date": "Jan 20" },
+    { "name": "Presidents' Day", "date": "Feb 17" },
+    { "name": "Good Friday", "date": "Apr 18" },
+    { "name": "Memorial Day", "date": "May 26" },
+    { "name": "Juneteenth", "date": "Jun 19" },
+    { "name": "Independence Day", "date": "Jul 4" },
+    { "name": "Labor Day", "date": "Sep 1" },
+    { "name": "Thanksgiving Day", "date": "Nov 27" },
+    { "name": "Christmas Day", "date": "Dec 25" }
+  ],
+  "early_closes": [
+    { "name": "Pre-Independence Day", "date": "Jul 3", "close_time": "1:00 PM ET" },
+    { "name": "Black Friday", "date": "Nov 28", "close_time": "1:00 PM ET" },
+    { "name": "Christmas Eve", "date": "Dec 24", "close_time": "1:00 PM ET" }
+  ],
+  "notes": [
+    "If a holiday falls on a weekend, markets may close on the nearest weekday.",
+    "Data aligned with NYSE and NASDAQ schedules."
+  ]
+}

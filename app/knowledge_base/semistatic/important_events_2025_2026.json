@@ -1,0 +1,27 @@
+{
+  "2025-12-31": {
+    "event_name": "Expiration of Enhanced ACA Premium Tax Credits",
+    "description": "The enhanced premium tax credits under the American Rescue Plan Act (ARPA) and extended under the Inflation Reduction Act are set to expire on December 31, 2025 unless Congress acts. :contentReference[oaicite:2]{index=2}",
+    "what_it_means": "If expired, many households will face higher health insurance premiums, reducing disposable income and potentially dampening consumer spending; healthcare/insurer stocks may face margin pressure; broader risk sentiment could shift if large‑scale coverage losses or cost rises occur."
+  },
+  "2026-01-30": {
+    "event_name": "Federal Government Funding Deadline (Continuing Resolution expires)",
+    "description": "A continuing resolution funds much of the federal government at FY2025 levels until January 30, 2026. :contentReference[oaicite:3]{index=3}",
+    "what_it_means": "If Congress fails to pass full appropriations by then, risk of shutdown/stopgap funding returns, which could impair federal programmes, delay economic data, depress sentiment, and affect sectors reliant on federal contracts (defence, aerospace, regulatory)."
+  },
+  "2026-04-15": {
+    "event_name": "Individual Income Tax Return Deadline for 2025 Tax Year",
+    "description": "Deadline for individuals to file their 2025 federal tax returns (Form 1040) and pay any tax due (absent extension). :contentReference[oaicite:4]{index=4}",
+    "what_it_means": "Large flows of tax refunds or payments can influence household liquidity; higher than expected tax burdens may reduce consumer spending; companies in tax‑sensitive sectors might face earnings surprises if consumer behaviour shifts."
+  },
+  "2026-11-03": {
+    "event_name": "U.S. General Midterm Elections (Congress, State & Local)",
+    "description": "The major U.S. mid‑term election day for federal offices (House and Senate) and many state/local seats. :contentReference[oaicite:5]{index=5}",
+    "what_it_means": "Elections increase policy/regulatory uncertainty; markets may price in potential shifts in fiscal, regulatory or tax policy depending on likely party control; sectors such as healthcare, energy, financials may see heightened sensitivity."
+  },
+  "2026‑(various dates)": {
+    "event_name": "State and Federal Primaries and Candidate Announcements Leading up to 2026 Elections",
+    "description": "Throughout 2026 (and late 2025 into early 2026), many states hold primaries, candidate announcements and policy positioning ahead of the November general elections. :contentReference[oaicite:6]{index=6}",
+    "what_it_means": "Even before the general election, markets may react to signals about which party or candidates may dominate, as this impacts expectations of policy — hence increased volatility, risk‑premium adjustments, especially in regulation‑sensitive sectors."
+  }
+}

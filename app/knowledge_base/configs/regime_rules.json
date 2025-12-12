@@ -1,0 +1,33 @@
+{
+  "windows": {
+    "short_days": 5,
+    "medium_days": 20
+  },
+  "thresholds": {
+    "risk_on": {
+      "spx_pct_min": 0.0,
+      "vix_pct_max": -1.0
+    },
+    "usd_soft": {
+      "dxy_pct_max": 0.0
+    },
+    "yields_rising": {
+      "ust10y_bp_min": 2.0
+    }
+  },
+  "tie_breakers": {
+    "us_exceptionalism": {
+      "spx_min": 0.5,
+      "dxy_min": 0.3
+    }
+  },
+  "labels": {
+    "risk_on": "risk-on",
+    "risk_off": "risk-off or neutral",
+    "usd_soft": "USD soft",
+    "usd_firm": "USD firm",
+    "usd_usx": "USD firm on U.S. outperformance",
+    "yields_rising": "rising",
+    "yields_mixed": "mixed"
+  }
+}

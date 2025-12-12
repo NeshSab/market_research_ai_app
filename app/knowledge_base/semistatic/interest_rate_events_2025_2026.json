@@ -1,0 +1,42 @@
+{
+  "2026‑01‑27": {
+    "event_name": "FOMC Meeting (Jan 27‑28, 2026)",
+    "description": "The Federal Open Market Committee (FOMC) of the Federal Reserve meets over two days (Jan 27‑28) to review and decide on U.S. monetary policy—including the benchmark federal funds rate. :contentReference[oaicite:2]{index=2}",
+    "what_it_means": "Markets will closely watch the rate decision, and the accompanying statement and commentary. A rate increase, decrease or even just a shift in forward guidance can impact interest‑sensitive sectors (financials, real estate), equity valuations, and investor risk‑sentiment."
+  },
+  "2026‑03‑17": {
+    "event_name": "FOMC Meeting (Mar 17‑18, 2026) + Summary of Economic Projections",
+    "description": "FOMC meets again (Mar 17‑18) and at this meeting the Summary of Economic Projections (SEP) is released (which includes the ‘dot plot’ of future rate expectations). :contentReference[oaicite:3]{index=3}",
+    "what_it_means": "Because future rate‑path expectations are published, this meeting can trigger heightened market volatility. A more hawkish or dovish outlook can shift investor positioning broadly, not just for U.S. but globally."
+  },
+  "2026‑04‑28": {
+    "event_name": "FOMC Meeting (Apr 28‑29, 2026)",
+    "description": "Regularly scheduled FOMC meeting for April. :contentReference[oaicite:4]{index=4}",
+    "what_it_means": "Even if no change to the rate is made, the tone of the statement, mention of inflation/employment risk, and any adjustment in forward guidance can move markets—so watch not only the action but also the communication."
+  },
+  "2026‑06‑16": {
+    "event_name": "FOMC Meeting (Jun 16‑17, 2026) + SEP",
+    "description": "Scheduled meeting with release of SEP (June) by the Fed. :contentReference[oaicite:5]{index=5}",
+    "what_it_means": "Another major checkpoint: the dot plot update again, which may reset market expectations of the rate path for the rest of the year. Could influence bond yields, equity valuations, currency flows."
+  },
+  "2026‑07‑28": {
+    "event_name": "FOMC Meeting (Jul 28‑29, 2026)",
+    "description": "Regular FOMC meeting in July. :contentReference[oaicite:6]{index=6}",
+    "what_it_means": "As mid‑year progresses, markets will monitor whether the Fed is shifting from “data‑dependent” mode to more explicit future direction—this meeting may reflect that. Sector‑rotation risk may increase if expectations of slower/higher rates change."
+  },
+  "2026‑09‑15": {
+    "event_name": "FOMC Meeting (Sep 15‑16, 2026)",
+    "description": "Scheduled meeting in September (regular). :contentReference[oaicite:7]{index=7}",
+    "what_it_means": "With the year winding down, markets may focus more on the broader macro‑outlook (growth, inflation) rather than just near‑term rate moves. Any signals of upcoming cuts, pauses, or hikes can shift market risk posture."
+  },
+  "2026‑10‑27": {
+    "event_name": "FOMC Meeting (Oct 27‑28, 2026)",
+    "description": "Regularly scheduled Fed meeting in October. :contentReference[oaicite:8]{index=8}",
+    "what_it_means": "This meeting comes ahead of the year‑end; markets may interpret the Fed’s tone as setting the stage for Q1 2027. Changes in guidance or forward path could lead to repositioning in equities, bonds, and currencies."
+  },
+  "2026‑12‑08": {
+    "event_name": "FOMC Meeting (Dec 8‑9, 2026) + SEP",
+    "description": "Final scheduled meeting of 2026 with the Summary of Economic Projections release. :contentReference[oaicite:9]{index=9}",
+    "what_it_means": "As year‑end approaches, this meeting is highly watched: markets will adjust to what the Fed expects for the next few years. This can influence investor sentiment going into 2027 and trigger portfolio rebalancing."
+  }
+}
