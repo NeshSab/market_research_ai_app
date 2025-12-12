@@ -41,5 +41,5 @@ def web_load(link: str) -> str:
         documents = loader.load()
     except Exception as e:
         logging.error(f"Error loading content from {link}: {e}")
-        return f"Error loading content from {link}: {str(e)}"
+
     return documents[0].page_content if documents else "No content loaded"
