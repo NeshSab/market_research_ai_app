@@ -23,7 +23,7 @@ Thumbs.db
 
 temp/
 
-*.log
+logs/app.log
 uv.lock
 .python-version
 pyproject.toml

@@ -102,7 +102,7 @@ def get_index_snap(tickers: list, period: str, interval: str = "1d") -> pd.DataF
 
 
 @st.cache_data(ttl=1800)
-def get_sector_perf(period="1wk") -> 'pd.DataFrame':
+def get_sector_perf(period="1wk") -> "pd.DataFrame":
     sectors = get_sector_etfs()
     df = yf.download(sectors, period=period, interval="1d", auto_adjust=True)[
         "Close"
@@ -306,14 +306,17 @@ def get_ticker_samples() -> dict[str, list[str]]:
     return samples
 
 
-def get_sector_etf_mapping() -> dict[str, str]:
+def get_sector_etf_mapping(source: str = None) -> dict[str, str]:
     """Get mapping from Yahoo Finance sector names to ETF symbols."""
     sector_data = load_sector_data()
-
+    if source == "yahoo":
+        attribute = "yahoo_sector_name"
+    else:
+        attribute = "sector_name"
     mapping = {}
     for etf_symbol, etf_data in sector_data.items():
-        if "sector_name" in etf_data:
-            sector_name = etf_data["sector_name"]
+        if attribute in etf_data:
+            sector_name = etf_data[attribute]
             mapping[sector_name] = etf_symbol
 
     return mapping
@@ -349,7 +352,7 @@ def get_ticker_info(ticker: str, period: str = "1wk") -> dict:
             else 0
         )
 
-        sector_etf_map = get_sector_etf_mapping()
+        sector_etf_map = get_sector_etf_mapping("yahoo")
         sector_etf = sector_etf_map.get(sector, "XLK")
         sector_data = _get_price_data(sector_etf, period)
         sector_return = (

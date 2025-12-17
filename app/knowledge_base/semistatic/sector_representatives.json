@@ -3,6 +3,7 @@
 {
   "XLK": {
     "sector_name": "Technology",
+    "yahoo_sector_name": "Technology",
     "name":"Technology Select Sector SPDR Fund",
     "stocks": {
       "MSFT": "Microsoft Corporation",
@@ -14,6 +15,7 @@
   },
   "XLF": {
     "sector_name": "Financials",
+    "yahoo_sector_name": "Financial Services",
     "name":"Financial Select SPDR Fund",
     "stocks": {
       "JPM": "JPMorgan Chase & Co.",
@@ -25,6 +27,7 @@
   },
   "XLE": {
     "sector_name": "Energy",
+    "yahoo_sector_name": "Basic Materials",
     "name":"Energy Select Sector SPDR Fund",
     "stocks": {
       "XOM": "Exxon Mobil Corporation",
@@ -36,6 +39,7 @@
   },
   "XLV": {
     "sector_name": "Health Care",
+    "yahoo_sector_name": "Healthcare",
     "name":"Health Care Select Sector SPDR Fund",
     "stocks": {
       "JNJ": "Johnson & Johnson",
@@ -47,6 +51,7 @@
   },
   "XLY": {
     "sector_name": "Consumer Discretionary",
+    "yahoo_sector_name": "Consumer Cyclical",
     "name":"Consumer Discretionary Select Sector SPDR Fund",
     "stocks": {
       "AMZN": "Amazon.com, Inc.",
@@ -58,6 +63,7 @@
   },
   "XLP": {
     "sector_name": "Consumer Staples",
+    "yahoo_sector_name": "Consumer Defensive",
     "name":"Consumer Staples Select Sector SPDR Fund",
     "stocks": {
       "PG": "The Procter & Gamble Company",
@@ -69,6 +75,7 @@
   },
   "XLI": {
     "sector_name": "Industrials",
+    "yahoo_sector_name": "Industrials",
     "name":"Industrial Select Sector SPDR Fund",
     "stocks": {
       "CAT": "Caterpillar Inc.",
@@ -80,6 +87,7 @@
   },
   "XLB": {
     "sector_name": "Materials",
+    "yahoo_sector_name": "Basic Materials",
     "name":"Materials Select Sector SPDR Fund",
     "stocks": {
       "LIN": "Linde plc",
@@ -91,6 +99,7 @@
   },
   "XLU": {
     "sector_name": "Utilities",
+    "yahoo_sector_name": "Utilities",
     "name":"Utilities Select Sector SPDR Fund",
     "stocks": {
       "NEE": "NextEra Energy, Inc.",
@@ -100,8 +109,21 @@
       "EXC": "Exelon Corporation"
     }
   },
+  "XME": {
+    "sector_name": "Metals & Mining",
+    "yahoo_sector_name": "Basic Materials",
+    "name": "SPDR S&P Metals & Mining ETF",
+    "stocks": {
+      "FCX": "Freeport-McMoRan Inc.",
+      "NEM": "Newmont Corporation",
+      "VALE": "Vale S.A.",
+      "CLF": "Cleveland-Cliffs Inc.",
+      "MT": "ArcelorMittal S.A."
+    }
+  },
   "VNQ": {
     "sector_name": "Real Estate",
+    "yahoo_sector_name": "Real Estate",
     "name":"Vanguard Real Estate Index Fund ETF Shares",
     "stocks": {
       "PLD": "Prologis, Inc.",
@@ -113,6 +135,7 @@
   },
   "SMH": {
     "sector_name": "Semiconductors",
+    "yahoo_sector_name": "Technology",
     "name":"VanEck Semiconductor ETF",
     "stocks": {
       "NVDA": "NVIDIA Corporation",
@@ -124,6 +147,7 @@
   },
   "XTL": {
     "sector_name": "Telecommunications / Communications",
+    "yahoo_sector_name": "Communication Services",
     "name": "SPDR S&P Telecom ETF",
     "stocks": {
       "ASTS": "AST SpaceMobile, Inc.",
@@ -133,8 +157,9 @@
       "GSAT": "Globalstar, Inc."
     }
   },
-   "XOP": {
-    "sector_name": "Oil & Gas Exploration & Production",
+  "XOP": {
+   "sector_name": "Oil & Gas Exploration & Production",
+   "yahoo_sector_name": "Basic Materials",
     "name": "SPDR S&P Oil & Gas Exploration & Production ETF",
     "stocks": {
       "CNX": "CNX Resources Corporation",
@@ -146,6 +171,7 @@
   },
   "GDX": {
     "sector_name": "Gold Mining / Precious Metals Mining",
+    "yahoo_sector_name": "Basic Materials",
     "name": "VanEck Gold Miners ETF",
     "stocks": {
       "NEM": "Newmont Corporation",
@@ -157,6 +183,7 @@
   },
   "IBB": {
     "sector_name": "Biotechnology",
+    "yahoo_sector_name": "Healthcare",
     "name": "iShares Biotechnology ETF",
     "stocks": {
       "JNJ": "Johnson & Johnson",        
@@ -168,6 +195,7 @@
   },
   "IYE": {
     "sector_name": "Energy (broad U.S. energy companies)",
+    "yahoo_sector_name": "Basic Materials",
     "name": "iShares U.S. Energy ETF",
     "stocks": {
       "XOM": "Exxon Mobil Corporation",
@@ -175,17 +203,6 @@
       "COP": "ConocoPhillips",
       "EOG": "EOG Resources, Inc.",
       "SLB": "Schlumberger N.V."
-    }
-  },
-  "XME": {
-    "sector_name": "Metals & Mining",
-    "name": "SPDR S&P Metals & Mining ETF",
-    "stocks": {
-      "FCX": "Freeport‑McMoRan Inc.",
-      "NEM": "Newmont Corporation",
-      "VALE": "Vale S.A.",
-      "CLF": "Cleveland‑Cliffs Inc.",
-      "MT": "ArcelorMittal S.A."
     }
   }
 }
