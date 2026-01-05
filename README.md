@@ -1,6 +1,7 @@
 # Market Intelligence Companion
 
 An AI-powered financial analysis companion that combines real-time market data, comprehensive sector analysis, and curated financial knowledge to provide professional-grade market insights. Built with Streamlit and powered by OpenAI's GPT models with RAG (Retrieval-Augmented Generation) capabilities.
+- Streamlit app link: https://market-research-assistant.streamlit.app/
 
 <br>
 
